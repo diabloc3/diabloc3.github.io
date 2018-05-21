@@ -62,6 +62,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="title-windows版memecache配置多个端口" class="article article-type-title" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/18/windows版memecache配置多个端口/" class="article-date">
+  <time datetime="2018-05-18T02:54:02.709Z" itemprop="datePublished">2018-05-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/18/windows版memecache配置多个端口/">windows版memcache配置多个端口</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Power By zhuhao (转载)<br>date: 2018-05-18 10:54:02<br>categories: diary<br>tags: [memcache,diary]</p>
+<hr>
+<p>1、下载memcache for windows。<br>下载地址：<a href="http://blog.couchbase.com/memcached-windows-64-bit-pre-release-available，推荐下载binaries版本，" target="_blank" rel="noopener">http://blog.couchbase.com/memcached-windows-64-bit-pre-release-available，推荐下载binaries版本，</a><br>解压(本例中解压到D:\memcached)。<br>2、安装memcache,<br>在命令行状态下输入： D:/memcached/memcached.exe -d install 。至此memcached已经安装成windows服务<br>3、启动memcache,<br>在命令行下输入： D:/memcached/memcached.exe -d start 以启动memcached服务。默认是启动在11211端口</p>
+<p>4 如果还想在windows下开启多个端口运行memcache,则在cmd下运行<br>sc create memcached2 binPath= “D:\memcached\memcached.exe -d runservice  -m 128 -c 512 -p 11212” start= auto DisplayName= “memcached2”  会启动另外一个memcache服务开始在11212端口<br>也可以在windows注册表中发现,cmd-regedit(回车) -HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/05/18/windows版memecache配置多个端口/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://diabloc3.github.io/2018/05/18/windows版memecache配置多个端口/" data-id="cjhfw149p0001sfxkybzg4noo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-title" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/17/title/" class="article-date">
@@ -72,10 +116,21 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/17/title/">Start My Blog Trip</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="title-Start-My-Blog-Trip-—-Power-By-Hexo-文章页面上的显示名称，可以任意修改，不会出现在URL中-date-2017-2-10-23-49-28-文章生成时间，一般不改-categories-diary-文章分类目录，多个分类使用-a-b-c-这种格式-tags-Hexo-diary-文章标签"><a href="#title-Start-My-Blog-Trip-—-Power-By-Hexo-文章页面上的显示名称，可以任意修改，不会出现在URL中-date-2017-2-10-23-49-28-文章生成时间，一般不改-categories-diary-文章分类目录，多个分类使用-a-b-c-这种格式-tags-Hexo-diary-文章标签" class="headerlink" title="title: Start My Blog Trip — Power By Hexo # 文章页面上的显示名称，可以任意修改，不会出现在URL中 date: 2017-2-10 23:49:28 # 文章生成时间，一般不改 categories: diary # 文章分类目录，多个分类使用[a,b,c]这种格式 tags: [Hexo,diary] # 文章标签 "></a>title: Start My Blog Trip — Power By Hexo # 文章页面上的显示名称，可以任意修改，不会出现在URL中 date: 2017-2-10 23:49:28 # 文章生成时间，一般不改 categories: diary # 文章分类目录，多个分类使用[a,b,c]这种格式 tags: [Hexo,diary] # 文章标签 </h2><p>#这里开始使用markdown格式输入你的正文。<br>
+        <p>Power By Hexo </p>
+<h1 id="文章页面上的显示名称，可以任意修改，不会出现在URL中-date-2017-2-10-23-49-28"><a href="#文章页面上的显示名称，可以任意修改，不会出现在URL中-date-2017-2-10-23-49-28" class="headerlink" title="文章页面上的显示名称，可以任意修改，不会出现在URL中 date: 2017-2-10 23:49:28"></a>文章页面上的显示名称，可以任意修改，不会出现在URL中 date: 2017-2-10 23:49:28</h1><h1 id="文章生成时间，一般不改-categories-diary"><a href="#文章生成时间，一般不改-categories-diary" class="headerlink" title="文章生成时间，一般不改 categories: diary"></a>文章生成时间，一般不改 categories: diary</h1><h1 id="文章分类目录，多个分类使用-a-b-c-这种格式-tags-Hexo-diary"><a href="#文章分类目录，多个分类使用-a-b-c-这种格式-tags-Hexo-diary" class="headerlink" title="文章分类目录，多个分类使用[a,b,c]这种格式 tags: [Hexo,diary]"></a>文章分类目录，多个分类使用[a,b,c]这种格式 tags: [Hexo,diary]</h1><h1 id="文章标签"><a href="#文章标签" class="headerlink" title="文章标签"></a>文章标签</h1><hr>
+<p>#这里开始使用markdown格式输入你的正文。<br>
         
           <p class="article-more-link">
             <a href="/2018/05/17/title/#more">Read More</a>
@@ -84,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://diabloc3.github.io/2018/05/17/title/" data-id="cjhac4ein0002edfygnv46sys" class="article-share-link">Share</a>
+      <a data-url="https://diabloc3.github.io/2018/05/17/title/" data-id="cjhfw14990000sfxklowoehkh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -129,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://diabloc3.github.io/2018/05/17/hello-world/" data-id="cjhac4eif0000edfylbsu97yy" class="article-share-link">Share</a>
+      <a data-url="https://diabloc3.github.io/2018/05/17/hello-world/" data-id="cjhfw149s0002sfxk5bivitqy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +225,11 @@
       <ul>
         
           <li>
-            <a href="/2018/05/17/title/">(no title)</a>
+            <a href="/2018/05/18/windows版memecache配置多个端口/">windows版memcache配置多个端口</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/17/title/">Start My Blog Trip</a>
           </li>
         
           <li>
