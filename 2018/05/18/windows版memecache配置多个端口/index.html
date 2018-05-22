@@ -1,215 +1,387 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<html lang="en">
 
-  
-  <title>windows版memcache配置多个端口 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Power By zhuhao (转载)date: 2018-05-18 10:54:02categories: diarytags: [memcache,diary]  1、下载memcache for windows。下载地址：http://blog.couchbase.com/memcached-windows-64-bit-pre-release-available，推荐下载binarie">
-<meta property="og:type" content="article">
-<meta property="og:title" content="windows版memcache配置多个端口">
-<meta property="og:url" content="https://diabloc3.github.io/2018/05/18/windows版memecache配置多个端口/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Power By zhuhao (转载)date: 2018-05-18 10:54:02categories: diarytags: [memcache,diary]  1、下载memcache for windows。下载地址：http://blog.couchbase.com/memcached-windows-64-bit-pre-release-available，推荐下载binarie">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-19T02:38:52.224Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows版memcache配置多个端口">
-<meta name="twitter:description" content="Power By zhuhao (转载)date: 2018-05-18 10:54:02categories: diarytags: [memcache,diary]  1、下载memcache for windows。下载地址：http://blog.couchbase.com/memcached-windows-64-bit-pre-release-available，推荐下载binarie">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="朱皓在 Github 上的个人博客">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Zhuhao" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        windows版memcache配置多个端口｜diabloc3&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://diabloc3.github.io/2018/05/18/windows版memecache配置多个端口/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://diabloc3.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="title-windows版memecache配置多个端口" class="article article-type-title" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/18/windows版memecache配置多个端口/" class="article-date">
-  <time datetime="2018-05-18T02:54:02.709Z" itemprop="datePublished">2018-05-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      windows版memcache配置多个端口
-    </h1>
-  
+<style>
 
-      </header>
+    header.intro-header {
+        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Zhuhao
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/title/">title</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
+
+<style>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Power By zhuhao (转载)<br>date: 2018-05-18 10:54:02<br>categories: diary<br>tags: [memcache,diary]</p>
+    header.intro-header {
+        background-image: url('http://oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>windows版memcache配置多个端口</h1>
+                    
+                    <span class="meta">
+                         作者 diabloc3
+                        <span>
+                          日期 2018-05-18
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            windows版memcache配置多个端口
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>Power By zhuhao (转载)<br>date: 2018-05-18 10:54:02<br>categories: diary<br>tags: [memcache,diary]</p>
 <hr>
 <p>1、下载memcache for windows。<br>下载地址：<a href="http://blog.couchbase.com/memcached-windows-64-bit-pre-release-available，推荐下载binaries版本，" target="_blank" rel="noopener">http://blog.couchbase.com/memcached-windows-64-bit-pre-release-available，推荐下载binaries版本，</a><br>解压(本例中解压到D:\memcached)。<br>2、安装memcache,<br>在命令行状态下输入： D:/memcached/memcached.exe -d install 。至此memcached已经安装成windows服务<br>3、启动memcache,<br>在命令行下输入： D:/memcached/memcached.exe -d start 以启动memcached服务。默认是启动在11211端口</p>
 <p>4 如果还想在windows下开启多个端口运行memcache,则在cmd下运行<br>sc create memcached2 binPath= “D:\memcached\memcached.exe -d runservice  -m 128 -c 512 -p 11212” start= auto DisplayName= “memcached2”  会启动另外一个memcache服务开始在11212端口<br>也可以在windows注册表中发现,cmd-regedit(回车) -HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services<br><a id="more"></a><br>-p 监听的端口<br>-l 连接的IP地址, 默认是本机<br>-d start 启动memcached服务<br>-d restart 重起memcached服务<br>-d stop|shutdown 关闭正在运行的memcached服务<br>-d install 安装memcached服务<br>-d uninstall 卸载memcached服务<br>-u 以的身份运行 (仅在以root运行的时候有效)<br>-m 最大内存使用，单位MB。默认64MB<br>-M 内存耗尽时返回错误，而不是删除项<br>-c 最大同时连接数，默认是1024<br>-f 块大小增长因子，默认是1.25<br>-n 最小分配空间，key+value+flags默认是48<br>-h 显示帮助 </p>
 <p>#more标签以下的内容要点击“阅读全文”才能看见，#more标签以上的内容为你首页显示文章的摘要部分</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://diabloc3.github.io/2018/05/18/windows版memecache配置多个端口/" data-id="cjhh3d9340004rzxkbp9ofoz4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/05/21/hexo搭建/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          hexo搭建
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/05/17/title/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Start My Blog Trip</div>
-    </a>
-  
-</nav>
+                <hr>
+                
 
-  
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/05/21/hexo搭建/" data-toggle="tooltip" data-placement="top"
+                           title="hexo搭建">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/05/17/title/" data-toggle="tooltip" data-placement="top"
+                           title="Start My Blog Trip">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/diabloc3">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/diabloc3">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Zhuhao 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/05/22/hexo生成博文插入图片/">hexo生成博文插入图片</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/21/hexo搭建/">hexo搭建</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/18/windows版memecache配置多个端口/">windows版memcache配置多个端口</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/17/title/">Start My Blog Trip</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/17/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://diabloc3.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<!-- Baidu Tongji -->
 
 
-<script src="/js/script.js"></script>
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
+  _st('install','','2.0.0');
+</script>
 
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  </div>
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
 </body>
+
 </html>

@@ -1,109 +1,179 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<html lang="en">
 
-  
-  <title>hexo搭建 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载-侵删  交流群有相关问题的可进群提问，Hexo交流群：111868326 （其他的前端问题也可以交流） 前言其实平时自己写的文章并不多，偶尔看到一些东西会做点笔记，但是每次写的东西都会到处放，不好找，所以才想着自己搭建一个人博客网站，现在大家用hexo比较多，也比较方便，并且能使用的主题也很多，所以小花就用她啦~ 本篇为从零开始的基础篇，其他SEO、评论系统、统计等请看Hexo博客添加SEO">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hexo搭建">
-<meta property="og:url" content="https://diabloc3.github.io/2018/05/21/hexo搭建/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="转载-侵删  交流群有相关问题的可进群提问，Hexo交流群：111868326 （其他的前端问题也可以交流） 前言其实平时自己写的文章并不多，偶尔看到一些东西会做点笔记，但是每次写的东西都会到处放，不好找，所以才想着自己搭建一个人博客网站，现在大家用hexo比较多，也比较方便，并且能使用的主题也很多，所以小花就用她啦~ 本篇为从零开始的基础篇，其他SEO、评论系统、统计等请看Hexo博客添加SEO">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/gitversion.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/node-v.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/hexo-v.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/hexo-init.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/new-repo.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/create-repo.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/username.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/email.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/ssh-key.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/settings.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/ssh-key.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/deploy.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/dns-note.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/themes.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/themes-config.png">
-<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/yungentie.png">
-<meta property="og:updated_time" content="2018-05-22T02:35:51.095Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo搭建">
-<meta name="twitter:description" content="转载-侵删  交流群有相关问题的可进群提问，Hexo交流群：111868326 （其他的前端问题也可以交流） 前言其实平时自己写的文章并不多，偶尔看到一些东西会做点笔记，但是每次写的东西都会到处放，不好找，所以才想着自己搭建一个人博客网站，现在大家用hexo比较多，也比较方便，并且能使用的主题也很多，所以小花就用她啦~ 本篇为从零开始的基础篇，其他SEO、评论系统、统计等请看Hexo博客添加SEO">
-<meta name="twitter:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/gitversion.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="朱皓在 Github 上的个人博客">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Zhuhao" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        hexo搭建｜diabloc3&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://diabloc3.github.io/2018/05/21/hexo搭建/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://diabloc3.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-hexo搭建" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/21/hexo搭建/" class="article-date">
-  <time datetime="2018-05-21T08:36:08.000Z" itemprop="datePublished">2018-05-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      hexo搭建
-    </h1>
-  
+<style>
 
-      </header>
+    header.intro-header {
+        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Zhuhao
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/title/">title</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
+
+<style>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>转载-侵删</p>
+    header.intro-header {
+        background-image: url('http://oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>hexo搭建</h1>
+                    
+                    <span class="meta">
+                         作者 diabloc3
+                        <span>
+                          日期 2018-05-21
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            hexo搭建
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>转载-侵删</p>
 <hr>
 <h1 id="交流群"><a href="#交流群" class="headerlink" title="交流群"></a>交流群</h1><p>有相关问题的可进群提问，Hexo交流群：111868326 （其他的前端问题也可以交流）</p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>其实平时自己写的文章并不多，偶尔看到一些东西会做点笔记，但是每次写的东西都会到处放，不好找，所以才想着自己搭建一个人博客网站，现在大家用hexo比较多，也比较方便，并且能使用的主题也很多，所以小花就用她啦~</p>
@@ -183,32 +253,32 @@
 </ul>
 <h3 id="5-一步之遥"><a href="#5-一步之遥" class="headerlink" title="5. 一步之遥"></a>5. 一步之遥</h3><ul>
 <li><p>用编辑器打开你的blog项目，修改_config.yml文件的一些配置(冒号之后都是有一个半角空格的)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>回到gitbash中，进入你的blog目录，分别执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>  注：hexo 3.0把服务器独立成个别模块，需要单独安装：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-server。</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-server。</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>打开浏览器输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://localhost:4000</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>接着你就可以遇见天使的微笑了~</p>
 </li>
 </ul>
 <h3 id="6-上传到github"><a href="#6-上传到github" class="headerlink" title="6. 上传到github"></a>6. 上传到github</h3><ul>
-<li>先安装一波：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<li>先安装一波：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>（这样才能将你写好的文章部署到github服务器上并让别人浏览到）</p>
 <ul>
-<li>执行命令(建议每次都按照如下步骤部署)：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<li>执行命令(建议每次都按照如下步骤部署)：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>注意deploy的过程中要输入你的username及passward。如下：<br><img src="/2018/05/21/hexo搭建/deploy.png" align="left"><br><br><br><br><br><br></p>
 <ul>
 <li>在浏览器中输入<a href="http://yourgithubname.github.io" target="_blank" rel="noopener">http://yourgithubname.github.io</a> 就可以看到你的个人博客啦，是不是很兴奋！</li>
-<li>感觉gitbash中东西太多的时候输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br></pre></td></tr></table></figure>
+<li>感觉gitbash中东西太多的时候输入<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">clear</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>命令清空。</p>
@@ -245,12 +315,12 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.posts.length) &#123; %&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap widget-list"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;&lt;%= __('sidebar.communiation') %&gt;&lt;/h3&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget"</span>&gt;</span><br><span class="line">        &lt;!--这里添加你要写的内容--&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.posts.length) &#123; %&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap widget-list"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;&lt;%= __('sidebar.communiation') %&gt;&lt;/h3&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget"</span>&gt;</span><br><span class="line">        &lt;!--这里添加你要写的内容--&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="9-添加RSS"><a href="#9-添加RSS" class="headerlink" title="9. 添加RSS"></a>9. 添加RSS</h3><ul>
 <li>先安装rss相关插件：<code>npm i hexo-generator-feed</code></li>
 <li>在你的项目的<code>_config.yml</code>配置文件下找到Extensions添加如下内容：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Extensions  #插件和主题</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Extensions  #插件和主题</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure>
 <ul>
 <li>进入到你的主题的配置文件下，找到你的放rss的位置，添加/atom.xml即可。</li>
 <li>重新部署再打开就能看到效果啦~</li>
@@ -277,124 +347,209 @@
 <li><a href="http://visugar.com" target="_blank" rel="noopener">小花的博客</a></li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://diabloc3.github.io/2018/05/21/hexo搭建/" data-id="cjhh3d9300002rzxky64yow7y" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/05/22/hexo生成博文插入图片/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          hexo生成博文插入图片
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/05/18/windows版memecache配置多个端口/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">windows版memcache配置多个端口</div>
-    </a>
-  
-</nav>
+                <hr>
+                
 
-  
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/05/22/hexo生成博文插入图片/" data-toggle="tooltip" data-placement="top"
+                           title="hexo生成博文插入图片">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/05/18/windows版memecache配置多个端口/" data-toggle="tooltip" data-placement="top"
+                           title="windows版memcache配置多个端口">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#交流群"><span class="toc-text">交流群</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#耍起来"><span class="toc-text">耍起来</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装Git-Bash"><span class="toc-text">1. 安装Git Bash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装NodeJs"><span class="toc-text">2. 安装NodeJs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装hexo"><span class="toc-text">3. 安装hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-搭桥到github"><span class="toc-text">4. 搭桥到github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-一步之遥"><span class="toc-text">5. 一步之遥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-上传到github"><span class="toc-text">6. 上传到github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-绑定个人域名"><span class="toc-text">7. 绑定个人域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-修改及配置主题"><span class="toc-text">8. 修改及配置主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-添加RSS"><span class="toc-text">9. 添加RSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-添加评论"><span class="toc-text">10. 添加评论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-写文章部分"><span class="toc-text">11. 写文章部分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结一波"><span class="toc-text">小结一波</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/diabloc3">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/diabloc3">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Zhuhao 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/05/22/hexo生成博文插入图片/">hexo生成博文插入图片</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/21/hexo搭建/">hexo搭建</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/18/windows版memecache配置多个端口/">windows版memcache配置多个端口</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/17/title/">Start My Blog Trip</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/17/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://diabloc3.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<!-- Baidu Tongji -->
 
 
-<script src="/js/script.js"></script>
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
+  _st('install','','2.0.0');
+</script>
 
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  </div>
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
 </body>
+
 </html>
