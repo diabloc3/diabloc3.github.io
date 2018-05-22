@@ -62,6 +62,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo生成博文插入图片" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/22/hexo生成博文插入图片/" class="article-date">
+  <time datetime="2018-05-22T02:38:43.000Z" itemprop="datePublished">2018-05-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/22/hexo生成博文插入图片/">hexo生成博文插入图片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="转载-侵删"><a href="#转载-侵删" class="headerlink" title="转载-侵删"></a>转载-侵删</h2><h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><ol>
+<li><p>把主页配置文件<code>_config.yml</code> 里的<code>post_asset_folder:</code>这个选项设置为<code>true</code></p>
+</li>
+<li><p>在你的hexo目录下执行这样一句话<code>npm install hexo-asset-image --save</code>，这是下载安装一个可以上传本地图片的插件，来自dalao：<a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">dalao的git</a></p>
+</li>
+<li><p>等待一小段时间后，再运行<code>hexo n &quot;xxxx&quot;</code>来生成md博文时，<code>/source/_posts</code>文件夹内除了<code>xxxx.md</code>文件还有一个同名的文件夹</p>
+</li>
+</ol>
+<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2><ol start="4">
+<li>最后在<code>xxxx.md</code>中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：</li>
+</ol>
+<p><code>![你想输入的替代文字](xxxx/图片名.jpg)</code></p>
+<p>注意： xxxx是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。</p>
+<ol start="5">
+<li>最后检查一下，<code>hexo g</code>生成页面后，进入<code>public\2017\02\26\index.html</code>文件中查看相关字段，可以发现，html标签内的语句是<code>&lt;img src=&quot;2017/02/26/xxxx/图片名.jpg&quot;&gt;</code>，而不是<code>&lt;img src=&quot;xxxx/图片名.jpg&gt;</code>。这很重要，关乎你的网页是否可以真正加载你想插入的图片。</li>
+</ol>
+<h2 id="总结一下这个跳（试）坑的过程"><a href="#总结一下这个跳（试）坑的过程" class="headerlink" title="总结一下这个跳（试）坑的过程"></a>总结一下这个跳（试）坑的过程</h2><p>首先是有句mmp想讲，实在是有点坑<br><img src="/2018/05/22/hexo生成博文插入图片/20170226154012235.jpeg" alt=""><br><img src="/2018/05/22/hexo生成博文插入图片/20170226154056704.jpeg" alt=""></p>
+<p>但是，似乎又多了一项学（zhuang）习（bi）技巧这里写图片描述</p>
+<p>hhh，先到这里，后面还有一个坑就是，想引入某些dalao 的链接时，如果链接里包含中文，那么再写入md文件里生成网页后这个链接就打不开了…..</p>
+<p>待老夫研究后再填坑，后面如果有时间，就把自己搭建网站的过程码一下。<br>这里写图片描述<br><img src="/2018/05/22/hexo生成博文插入图片/20170226154126642.jpeg" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://diabloc3.github.io/2018/05/22/hexo生成博文插入图片/" data-id="cjhh3d9380005rzxkgyokgjkf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo搭建" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/21/hexo搭建/" class="article-date">
@@ -222,16 +278,46 @@
 </li>
 <li>回到你的主题的配置文件中，找到<code>widgets</code>一栏，在你要添加的位置处添加一条你自定义的名称。例如我的叫<code>communiation</code>且放在了第二行。</li>
 <li>在上面所提到的<code>zh-CN.yml</code>文件中找到sidebar一栏，添加<code>communiation: &#39;你要设的名称&#39;</code>。</li>
-<li>在<code>hueman/layout/widget</code>中添加一个<code>communiation.ejs</code>,填入模板<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.posts.length) &#123; %&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap widget-list"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;&lt;%= __('sidebar.communiation') %&gt;&lt;/h3&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget"</span>&gt;</span><br><span class="line">        &lt;!--这里添加你要写的内容--&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-</li>
+<li>在<code>hueman/layout/widget</code>中添加一个<code>communiation.ejs</code>,填入模板</li>
 </ul>
 </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.posts.length) &#123; %&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap widget-list"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;&lt;%= __('sidebar.communiation') %&gt;&lt;/h3&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget"</span>&gt;</span><br><span class="line">        &lt;!--这里添加你要写的内容--&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="9-添加RSS"><a href="#9-添加RSS" class="headerlink" title="9. 添加RSS"></a>9. 添加RSS</h3><ul>
+<li>先安装rss相关插件：<code>npm i hexo-generator-feed</code></li>
+<li>在你的项目的<code>_config.yml</code>配置文件下找到Extensions添加如下内容：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Extensions  #插件和主题</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure>
+<ul>
+<li>进入到你的主题的配置文件下，找到你的放rss的位置，添加/atom.xml即可。</li>
+<li>重新部署再打开就能看到效果啦~</li>
+</ul>
+<h3 id="10-添加评论"><a href="#10-添加评论" class="headerlink" title="10. 添加评论"></a>10. 添加评论</h3><p><strong>20170812更新：</strong></p>
+<p>云更贴已在2017年8月1日停止服务，具体评论系统文章统计站长统计及百度SEO谷歌SEO什么的可参考<a href="https://www.cnblogs.com/visugar/p/6821777.html" target="_blank" rel="noopener">Hexo博客添加SEO-评论系统-阅读统计-站长统计</a></p>
+<p>–<br>此段已失效。</p>
+<ul>
+<li>先选一个你要使用的第三方评论系统，最好找个靠谱点的（我使用的是网易云跟帖）。</li>
+<li>在主题的配置文件下找到comment，添加一行，例如我添加的是<code>yungentie: 此处自由发挥</code></li>
+<li>注册完评论系统后获取相应的代码，然后在主题的layout下找到comment新建一个ejs模板文件，名称自定义。<br><img src="/2018/05/21/hexo搭建/yungentie.png" align="left"><br><br><br><br><br><br></li>
+<li>找到你的article.ejs模板文件，加上&lt;%- partial(‘comment/你刚刚取得名字’) %&gt;保存。</li>
+<li>重新部署，OK啦</li>
+</ul>
+<h3 id="11-写文章部分"><a href="#11-写文章部分" class="headerlink" title="11. 写文章部分"></a>11. 写文章部分</h3><ul>
+<li>新建文章：<code>hexo new &#39;文章名&#39;</code>，然后你就可以在<code>source/_posts</code>路径下看到你创建的文章啦，编辑完成之后按照前面说的方式部署，在浏览器刷新就能看到你的文章了。</li>
+<li>关于具体的文章编辑你可以看下<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">官网的介绍</a></li>
+<li>至于markdown，可以自行发挥啦~</li>
+</ul>
+<h2 id="小结一波"><a href="#小结一波" class="headerlink" title="小结一波"></a>小结一波</h2><ul>
+<li>在哪里跌倒，就在哪里趴下，休息一会儿你会发现新大陆的哦~</li>
+<li>本文针对的是从来没用hexo搭建过个人博客的小伙伴，不过文中获取会有一些小错误，欢迎大佬们指正，小花不胜感激！</li>
+<li>感觉我好啰嗦啊，可是没办法，我就是这么爱打字丫</li>
+<li><a href="http://visugar.com" target="_blank" rel="noopener">小花的博客</a></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://diabloc3.github.io/2018/05/21/hexo搭建/" data-id="cjhh1v6o30001bmxkzsf5kz7f" class="article-share-link">Share</a>
+      <a data-url="https://diabloc3.github.io/2018/05/21/hexo搭建/" data-id="cjhh3d9300002rzxky64yow7y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -275,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://diabloc3.github.io/2018/05/18/windows版memecache配置多个端口/" data-id="cjhh1v6ob0003bmxkpr12yb74" class="article-share-link">Share</a>
+      <a data-url="https://diabloc3.github.io/2018/05/18/windows版memecache配置多个端口/" data-id="cjhh3d9340004rzxkbp9ofoz4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -318,7 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://diabloc3.github.io/2018/05/17/title/" data-id="cjhh1v6o90002bmxkuufsutjd" class="article-share-link">Share</a>
+      <a data-url="https://diabloc3.github.io/2018/05/17/title/" data-id="cjhh3d9330003rzxk64da92kj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -363,7 +449,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://diabloc3.github.io/2018/05/17/hello-world/" data-id="cjhh1v6oc0004bmxko6sympri" class="article-share-link">Share</a>
+      <a data-url="https://diabloc3.github.io/2018/05/17/hello-world/" data-id="cjhh3d92r0000rzxkkxpz9cmo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,6 +488,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/22/hexo生成博文插入图片/">hexo生成博文插入图片</a>
+          </li>
         
           <li>
             <a href="/2018/05/21/hexo搭建/">hexo搭建</a>
