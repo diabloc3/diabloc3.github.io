@@ -25,7 +25,11 @@
 <meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/ssh-key.png">
 <meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/settings.png">
 <meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/ssh-key.png">
-<meta property="og:updated_time" content="2018-05-21T10:09:25.092Z">
+<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/deploy.png">
+<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/dns-note.png">
+<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/themes.png">
+<meta property="og:image" content="https://diabloc3.github.io/2018/05/21/hexo搭建/themes-config.png">
+<meta property="og:updated_time" content="2018-05-22T02:10:36.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建">
 <meta name="twitter:description" content="转载-侵删  交流群有相关问题的可进群提问，Hexo交流群：111868326 （其他的前端问题也可以交流） 前言其实平时自己写的文章并不多，偶尔看到一些东西会做点笔记，但是每次写的东西都会到处放，不好找，所以才想着自己搭建一个人博客网站，现在大家用hexo比较多，也比较方便，并且能使用的主题也很多，所以小花就用她啦~ 本篇为从零开始的基础篇，其他SEO、评论系统、统计等请看Hexo博客添加SEO">
@@ -176,11 +180,76 @@
 <li><p>完成下一步你就成功啦！</p>
 </li>
 </ul>
+<h3 id="5-一步之遥"><a href="#5-一步之遥" class="headerlink" title="5. 一步之遥"></a>5. 一步之遥</h3><ul>
+<li><p>用编辑器打开你的blog项目，修改_config.yml文件的一些配置(冒号之后都是有一个半角空格的)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>回到gitbash中，进入你的blog目录，分别执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>  注：hexo 3.0把服务器独立成个别模块，需要单独安装：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-server。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开浏览器输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接着你就可以遇见天使的微笑了~</p>
+</li>
+</ul>
+<h3 id="6-上传到github"><a href="#6-上传到github" class="headerlink" title="6. 上传到github"></a>6. 上传到github</h3><ul>
+<li>先安装一波：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>（这样才能将你写好的文章部署到github服务器上并让别人浏览到）</p>
+<ul>
+<li>执行命令(建议每次都按照如下步骤部署)：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意deploy的过程中要输入你的username及passward。如下：<br><img src="/2018/05/21/hexo搭建/deploy.png" align="left"><br><br><br><br><br><br></p>
+<ul>
+<li>在浏览器中输入<a href="http://yourgithubname.github.io" target="_blank" rel="noopener">http://yourgithubname.github.io</a> 就可以看到你的个人博客啦，是不是很兴奋！</li>
+<li>感觉gitbash中东西太多的时候输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>命令清空。</p>
+<h3 id="7-绑定个人域名"><a href="#7-绑定个人域名" class="headerlink" title="7. 绑定个人域名"></a>7. 绑定个人域名</h3><ul>
+<li>不想绑定的自行忽略</li>
+<li>第一步购买域名：随便在哪个网站买一个就好了，小花是在阿里云购买的visugar.com, DNS也是顺道在那买的。</li>
+<li><p>第二步添加CNAME：在项目的source文件夹下新建一个名为CNAME的文件，在里面添加你购买的域名，比如我添加的是<code>visugar.com</code>，只能添加一个哦。<br>到DNS中添加一条记录：<br><img src="/2018/05/21/hexo搭建/dns-note.png" align="left"><br><br><br><br><br><br></p>
+<p>  其中ip地址为你的github的地址，可在cmd中ping一下就能看到(<code>ping yourname.github.io</code>)：</p>
+</li>
+<li>接着再次部署一下，用你购买的域名打开，就可以看到你的博客啦~</li>
+</ul>
+<h3 id="8-修改及配置主题"><a href="#8-修改及配置主题" class="headerlink" title="8. 修改及配置主题"></a>8. 修改及配置主题</h3><ul>
+<li>hexo初始化之后默认的主题是<code>landscape</code> , 然后你可以去<a href="https://hexo.io/themes/" target="_blank" rel="noopener">这个地址</a>里面找到你想要的主题。在github中搜索你要的主题名称，里面都会有该主题的如何使用的介绍，按着来就好了，反正就是改改改！我选的是<code>hueman</code>,看起来挺不错，至少是我喜欢的类型。</li>
+</ul>
+<p><img src="/2018/05/21/hexo搭建/themes.png" align="left"><br><br><br><br><br><br></p>
+<ul>
+<li><p>跟该主题相关的配置在<code>themes/hueman/_config.yml</code>里面,然后根据你的需要在这配配配就行了。<br><img src="/2018/05/21/hexo搭建/themes-config.png" align="left"><br><br><br><br><br><br></p>
+</li>
+<li><p>有的东西我也不知道是啥玩意儿，你要多试多倒腾几次，就能意会啦</p>
+</li>
+<li><p>下面是针对我所选的主题的两小点(别的主题我没看，可能也是类似):</p>
+<p>  <strong>在导航栏添加点东西</strong></p>
+<ul>
+<li>例如我添加了一个更新日志的模块。</li>
+<li>在主题的配置文件中，menu添加一栏：<code>Board: /board</code>。</li>
+<li>然后在source中添加一个board，即对应上面的名字。然后再创建一个index.md，里面可以写你想写的内容。</li>
+<li>在主题的<code>hueman/langulages/zh-CN.yml</code>中的index适当的位置加：<code>board: &#39;更新日志&#39;</code>，位置和名字是你自己设定。</li>
+<li><p>重新部署，然后就OK了</p>
+<p><strong>在侧边栏添加点东西</strong></p>
+</li>
+<li>回到你的主题的配置文件中，找到<code>widgets</code>一栏，在你要添加的位置处添加一条你自定义的名称。例如我的叫<code>communiation</code>且放在了第二行。</li>
+<li>在上面所提到的<code>zh-CN.yml</code>文件中找到sidebar一栏，添加<code>communiation: &#39;你要设的名称&#39;</code>。</li>
+<li>在<code>hueman/layout/widget</code>中添加一个<code>communiation.ejs</code>,填入模板<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.posts.length) &#123; %&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap widget-list"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;&lt;%= __('sidebar.communiation') %&gt;&lt;/h3&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget"</span>&gt;</span><br><span class="line">        &lt;!--这里添加你要写的内容--&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://diabloc3.github.io/2018/05/21/hexo搭建/" data-id="cjhg3a9v90000t1xk7jmb9y1b" class="article-share-link">Share</a>
+      <a data-url="https://diabloc3.github.io/2018/05/21/hexo搭建/" data-id="cjhh1q0v500029bxkjauzo7iq" class="article-share-link">Share</a>
       
       
     </footer>
