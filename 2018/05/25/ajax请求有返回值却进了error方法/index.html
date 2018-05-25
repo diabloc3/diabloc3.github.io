@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Start My Blog Trip｜undefined
+        ajax请求有返回值却进了error方法｜undefined
         
     </title>
 
-    <link rel="canonical" href="https://diabloc3.github.io/2018/05/17/title/">
+    <link rel="canonical" href="https://diabloc3.github.io/2018/05/25/ajax请求有返回值却进了error方法/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -145,12 +145,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Start My Blog Trip</h1>
+                    <h1>ajax请求有返回值却进了error方法</h1>
                     
                     <span class="meta">
                          作者 diabloc3
                         <span>
-                          日期 2018-05-17
+                          日期 2018-05-25
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -162,7 +162,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Start My Blog Trip
+            ajax请求有返回值却进了error方法
         </span>
     </div>
 </header>
@@ -173,25 +173,23 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>Power By Hexo </p>
-<h1 id="文章页面上的显示名称，可以任意修改，不会出现在URL中-date-2017-2-10-23-49-28"><a href="#文章页面上的显示名称，可以任意修改，不会出现在URL中-date-2017-2-10-23-49-28" class="headerlink" title="文章页面上的显示名称，可以任意修改，不会出现在URL中 date: 2017-2-10 23:49:28"></a>文章页面上的显示名称，可以任意修改，不会出现在URL中 date: 2017-2-10 23:49:28</h1><h1 id="文章生成时间，一般不改-categories-diary"><a href="#文章生成时间，一般不改-categories-diary" class="headerlink" title="文章生成时间，一般不改 categories: diary"></a>文章生成时间，一般不改 categories: diary</h1><h1 id="文章分类目录，多个分类使用-a-b-c-这种格式-tags-Hexo-diary"><a href="#文章分类目录，多个分类使用-a-b-c-这种格式-tags-Hexo-diary" class="headerlink" title="文章分类目录，多个分类使用[a,b,c]这种格式 tags: [Hexo,diary]"></a>文章分类目录，多个分类使用[a,b,c]这种格式 tags: [Hexo,diary]</h1><h1 id="文章标签"><a href="#文章标签" class="headerlink" title="文章标签"></a>文章标签</h1><hr>
-<p>#这里开始使用markdown格式输入你的正文。<br><a id="more"></a> </p>
-<p>#more标签以下的内容要点击“阅读全文”才能看见，#more标签以上的内容为你首页显示文章的摘要部分</p>
+                <p>原创</p>
+<hr>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>今天调试一个身份证验证的接口，demo里给了php、java、C#的例子。我方的网站是ThinkPhp搭建的，但是验证这块用的是js实现，所以偷懒想用js去对接接口。浏览器中请求通了并且可以看到返回值，但是js代码里却还是进了ajax的error方法。</p>
+<h2 id="error方法的调试"><a href="#error方法的调试" class="headerlink" title="error方法的调试"></a>error方法的调试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">jQuery.ajax(&#123;</span><br><span class="line">    url: &quot;/Handle/Do.aspx&quot;,</span><br><span class="line">    type: &quot;post&quot;,</span><br><span class="line">    data: &#123; id: &apos;0&apos; &#125;,</span><br><span class="line">    dataType: &quot;json&quot;,</span><br><span class="line">    success: function(msg) &#123;</span><br><span class="line">        alert(msg);</span><br><span class="line">    &#125;,</span><br><span class="line">    error: function(XMLHttpRequest, textStatus, errorThrown) &#123;</span><br><span class="line">        alert(XMLHttpRequest.status);</span><br><span class="line">        alert(XMLHttpRequest.readyState);</span><br><span class="line">        alert(textStatus);</span><br><span class="line">    &#125;,</span><br><span class="line">    complete: function(XMLHttpRequest, textStatus) &#123;</span><br><span class="line">        this; // 调用本次AJAX请求时传递的options参数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>打印出的状态值可以自行百度</p>
+<h2 id="readyState-4并且status-200时，还进error方法"><a href="#readyState-4并且status-200时，还进error方法" class="headerlink" title="readyState=4并且status=200时，还进error方法"></a>readyState=4并且status=200时，还进error方法</h2><p>这两个状态也证明ajax访问没有问题，没有出现异常。回过头发现我在后台返回的是字符串，但并不是标准的json格式的字符串，所以前端js进入不了success。无法解析为json格式的数据，所以报错进error。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对方接口里没有给你js的对接方案，就说明不支持jsonp的跨域解决方案</p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2018/05/18/windows版memecache配置多个端口/" data-toggle="tooltip" data-placement="top"
-                           title="windows版memcache配置多个端口">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2018/05/17/hello-world/" data-toggle="tooltip" data-placement="top"
-                           title="Hello World">Next Post &rarr;</a>
+                        <a href="/2018/05/22/hexo生成博文插入图片/" data-toggle="tooltip" data-placement="top"
+                           title="hexo生成博文插入图片">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -207,7 +205,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文章页面上的显示名称，可以任意修改，不会出现在URL中-date-2017-2-10-23-49-28"><span class="toc-text">文章页面上的显示名称，可以任意修改，不会出现在URL中 date: 2017-2-10 23:49:28</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章生成时间，一般不改-categories-diary"><span class="toc-text">文章生成时间，一般不改 categories: diary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章分类目录，多个分类使用-a-b-c-这种格式-tags-Hexo-diary"><span class="toc-text">文章分类目录，多个分类使用[a,b,c]这种格式 tags: [Hexo,diary]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章标签"><span class="toc-text">文章标签</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#error方法的调试"><span class="toc-text">error方法的调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#readyState-4并且status-200时，还进error方法"><span class="toc-text">readyState=4并且status=200时，还进error方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
                 </div>
             </div>
         </div>

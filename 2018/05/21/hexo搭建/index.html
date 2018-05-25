@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="朱皓在 Github 上的个人博客">
+    <meta name="description" content="">
     <meta name="keyword" content="">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Zhuhao" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="zhuhao" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        hexo搭建｜diabloc3&#39;s blog
+        hexo搭建｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://diabloc3.github.io/2018/05/21/hexo搭建/">
+    <link rel="canonical" href="https://diabloc3.github.io/2018/05/21/hexo搭建/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
+        background-image: url('')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    Zhuhao
+                    zhuhao
                 </span>
                 's Blog
             </a>
@@ -128,13 +128,13 @@
 
 
 <img class="wechat-title-img"
-     src="http://oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+     src="">
 
 
 <style>
     
     header.intro-header {
-        background-image: url('http://oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
+        background-image: url('')
     }
 
     
@@ -253,32 +253,32 @@
 </ul>
 <h3 id="5-一步之遥"><a href="#5-一步之遥" class="headerlink" title="5. 一步之遥"></a>5. 一步之遥</h3><ul>
 <li><p>用编辑器打开你的blog项目，修改_config.yml文件的一些配置(冒号之后都是有一个半角空格的)：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>回到gitbash中，进入你的blog目录，分别执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>  注：hexo 3.0把服务器独立成个别模块，需要单独安装：</p>
-  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-server。</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-server。</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>打开浏览器输入：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://localhost:4000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>接着你就可以遇见天使的微笑了~</p>
 </li>
 </ul>
 <h3 id="6-上传到github"><a href="#6-上传到github" class="headerlink" title="6. 上传到github"></a>6. 上传到github</h3><ul>
-<li>先安装一波：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<li>先安装一波：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>（这样才能将你写好的文章部署到github服务器上并让别人浏览到）</p>
 <ul>
-<li>执行命令(建议每次都按照如下步骤部署)：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<li>执行命令(建议每次都按照如下步骤部署)：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>注意deploy的过程中要输入你的username及passward。如下：<br><img src="/2018/05/21/hexo搭建/deploy.png" align="left"><br><br><br><br><br><br></p>
 <ul>
 <li>在浏览器中输入<a href="http://yourgithubname.github.io" target="_blank" rel="noopener">http://yourgithubname.github.io</a> 就可以看到你的个人博客啦，是不是很兴奋！</li>
-<li>感觉gitbash中东西太多的时候输入<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">clear</span><br></pre></td></tr></table></figure>
+<li>感觉gitbash中东西太多的时候输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>命令清空。</p>
@@ -315,12 +315,12 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.posts.length) &#123; %&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap widget-list"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;&lt;%= __('sidebar.communiation') %&gt;&lt;/h3&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget"</span>&gt;</span><br><span class="line">        &lt;!--这里添加你要写的内容--&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.posts.length) &#123; %&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap widget-list"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;&lt;%= __('sidebar.communiation') %&gt;&lt;/h3&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget"</span>&gt;</span><br><span class="line">        &lt;!--这里添加你要写的内容--&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="9-添加RSS"><a href="#9-添加RSS" class="headerlink" title="9. 添加RSS"></a>9. 添加RSS</h3><ul>
 <li>先安装rss相关插件：<code>npm i hexo-generator-feed</code></li>
 <li>在你的项目的<code>_config.yml</code>配置文件下找到Extensions添加如下内容：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Extensions  #插件和主题</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Extensions  #插件和主题</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure>
 <ul>
 <li>进入到你的主题的配置文件下，找到你的放rss的位置，添加/atom.xml即可。</li>
 <li>重新部署再打开就能看到效果啦~</li>
@@ -391,16 +391,6 @@
 
                 <!-- Featured Tags -->
                 
-                <section>
-                    <!-- no hr -->
-                    <h5 class="text-center">
-                        <a href="/tags/">FEATURED TAGS</a>
-                    </h5>
-                    <div class="tags">
-                        
-                    </div>
-                </section>
-                
 
                 <!-- Friends Blog -->
                 
@@ -426,55 +416,19 @@
                 <ul class="list-inline text-center">
                 
                 
-                    <li>
-                        <a target="_blank" href="https://twitter.com/ehazon">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
-                
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                
-
-                
-                    <li>
-                        <a target="_blank" href="http://weibo.com/diabloc3">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
                 
 
                 
 
                 
-                    <li>
-                        <a target="_blank"  href="https://github.com/diabloc3">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
+
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Zhuhao 2018
+                    Copyright &copy; zhuhao 2018
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -511,7 +465,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://diabloc3.github.io/js/jquery.tagcloud.js",function(){
+        async("https://diabloc3.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
